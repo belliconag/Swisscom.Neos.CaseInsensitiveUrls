@@ -26,7 +26,7 @@ class LowercaseRoutePartAspect {
 	 * @Flow\Before("method(Neos\Neos\Routing\FrontendNodeRoutePartHandler->matchValue())")
 	 * @return void
 	 */
-	public function convertRoutePartToLowerCase(\Neos\Flow\AOP\JoinPointInterface $joinPoint) {
+	public function convertRoutePartToLowerCase(\Neos\Flow\Aop\JoinPointInterface $joinPoint) {
 		$lowerCaseRequestPath = strtolower($joinPoint->getMethodArgument('requestPath'));
 
 		$joinPoint->setMethodArgument('requestPath', $lowerCaseRequestPath);
